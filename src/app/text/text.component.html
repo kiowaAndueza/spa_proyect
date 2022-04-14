@@ -1,0 +1,18 @@
+<form class="form-group row align-items-start mt-3">
+    <div class="col-md-6 mb-4">
+        <div class="form-group col-md-10"><h4>Original Text</h4></div>
+
+        <div class="form-group col-md-12">
+            <div class="form-floating">
+                <textarea class="form-control " placeholder="" id="floatingTextarea2" name="text" style="height: 100px" [(ngModel)]="text"></textarea>
+                <label for="floatingTextarea2">Original Text</label>
+            </div>
+        </div>
+    </div>
+    <app-result [result2]="invertText()" class="col-md-6"></app-result>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-primary" type="submit" (click)="saveText()" style="margin-top: 13px; width: min-content;">Save</button>
+    </div>
+</form>
+
+<app-list *ngFor="let text of texts; let i=index" [textList]="text" [indexList]="i"></app-list>
